@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import {OnInit} from '@angular/core';
+import { SessaoService } from './service/sessao.service';
+import { Isessao } from './service/isessao';
 
 @Component({
   selector: 'app-sessao-compras',
   templateUrl: './sessao-compras.component.html',
   styleUrls: ['./sessao-compras.component.scss']
 })
-export class SessaoComprasComponent {
+export class SessaoComprasComponent implements OnInit {
+
+  ngOnInit(): void { this.listar()}
+
+  produtos: Isessao[] = [];
+
+  constructor (private service:SessaoService) { }
+
+  listar() {
+    this.service.listar().subscribe(dados => this.produtos = dados);
+  }
+
+  
+
   Comprar(){
     Swal.fire({
       title: "Você deseja comprar esse Produto?",

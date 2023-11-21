@@ -1,0 +1,11 @@
+{
+    "produtos": [
+        {
+            "img": "../../assets/arroz.webp",
+            "nome": "Arroz Agulhinha",
+            "valor": 20,
+            "descricao": "Arroz Agulhinha Tipo 1 Qualitá Pacote 5kg",
+            "id": 1
+        }
+    ]
+}

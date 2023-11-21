@@ -1,36 +1,10 @@
 <div class="container d-flex  d-flex justify-content-between tamanho">
-    <div class="card" style="width: 18rem;">
-        <img src="../../assets/arroz.webp" class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem;" *ngFor="let p of produtos">
+        <img src="{{p.img}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Arroz</h5>
-          <p class="card-text">Arroz Agulhinha Tipo 1 Qualitá Pacote 5kg </p>
-            <a href="#" class="btn btn-secondary  container-fluid" (click)="Comprar()">Comprar</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="../../assets/bolacha.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Bolacha</h5>
-          <p class="card-text">Bolacha Minueto Sabores Kit Com 30 Unidades Sabor Brigadeiro</p>
-            <a href="#" class="btn btn-secondary  container-fluid" (click)="Comprar()">Comprar</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="../../assets/café.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Café</h5>
-          <p class="card-text">Café Torrado e Moído Tradicional 3 Corações Pacote 250g</p>
-            <a href="#" class="btn btn-secondary  container-fluid" (click)="Comprar()">Comprar</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="../../assets/leite.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Leite Integral</h5>
-          <p class="card-text">Leite Integral UHT Italac 1 Litro</p>
+          <h5 class="card-title">{{p.nome}}</h5>
+          <h5 class="card-title">{{p.valor |currency : 'BRL'}}</h5>
+          <p class="card-text">{{p.descricao}}</p>
             <a href="#" class="btn btn-secondary  container-fluid" (click)="Comprar()">Comprar</a>
         </div>
     </div>
